@@ -1,0 +1,37 @@
+#N canvas 61 271 536 485 10;
+#X obj 8 106 oscparse;
+#X obj 9 16 loadbang;
+#X obj 9 76 netreceive -u -b;
+#X msg 9 45 listen 9000;
+#X obj 67 167 print BITCOINVALUE;
+#X text 152 19 on load \, listen to port 9000 (sent from python);
+#X text 94 112 parse your data \, unpack your number from the string
+;
+#X text 116 191 if you want more from the data you may have to unpack
+differently or change the JSON request in the python;
+#X text 303 269 do yo magic :);
+#X floatatom 274 300 5 0 0 0 - - -, f 5;
+#X floatatom 342 359 5 0 0 0 - - -, f 5;
+#X obj 383 382 makenote 100 1000;
+#X obj 326 427 noteout 2;
+#X obj 316 327 / 100;
+#X obj 508 317;
+#X floatatom 172 276 5 0 0 0 - - -, f 5;
+#X msg 99 246;
+#X floatatom 64 226 5 0 0 0 - - -, f 5;
+#X symbolatom 107 363 10 0 0 0 - - -, f 10;
+#X obj 7 132 unpack s f;
+#X floatatom 139 323 5 0 0 0 - - -, f 5;
+#X connect 0 0 19 0;
+#X connect 1 0 3 0;
+#X connect 2 0 0 0;
+#X connect 3 0 2 0;
+#X connect 9 0 13 0;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
+#X connect 11 1 12 1;
+#X connect 13 0 10 0;
+#X connect 19 1 4 0;
+#X connect 19 1 9 0;
+#X connect 19 1 18 0;
+#X connect 19 1 20 0;
